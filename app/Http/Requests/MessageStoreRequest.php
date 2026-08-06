@@ -1,0 +1,28 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class MessageStoreRequest extends FormRequest
+{
+    public function authorize(): bool
+    {
+        return true;
+    }
+
+    public function rules(): array
+    {
+        return [
+            'conversation_id' => [
+                'required',
+                'exists:conversations,id',
+            ],
+
+            'message' => [
+                'required',
+                'string',
+            ],
+        ];
+    }
+}

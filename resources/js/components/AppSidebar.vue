@@ -5,6 +5,8 @@ import AppLogo from '@/components/AppLogo.vue';
 import NavFooter from '@/components/NavFooter.vue';
 import NavMain from '@/components/NavMain.vue';
 import NavUser from '@/components/NavUser.vue';
+import { MessageCircle } from '@lucide/vue';
+import conversations from '@/routes/conversations';
 import {
     Sidebar,
     SidebarContent,
@@ -19,14 +21,14 @@ import type { NavItem } from '@/types';
 
 const mainNavItems: NavItem[] = [
     {
-        title: 'Dashboard',
-        href: dashboard(),
-        icon: LayoutGrid,
+        title: 'Conversations',
+        href: conversations.index(),
+        icon: MessageCircle,
     },
 ];
 
 const footerNavItems: NavItem[] = [
-    {
+   /*  {
         title: 'Repository',
         href: 'https://github.com/laravel/vue-starter-kit',
         icon: FolderGit2,
@@ -35,7 +37,7 @@ const footerNavItems: NavItem[] = [
         title: 'Documentation',
         href: 'https://laravel.com/docs/starter-kits#vue',
         icon: BookOpen,
-    },
+    }, */
 ];
 </script>
 
